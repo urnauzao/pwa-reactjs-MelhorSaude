@@ -1,8 +1,11 @@
 import http from "../http-common";
 
+const urlBase = "http://melhorsaude-env.eba-xwk43qff.us-east-2.elasticbeanstalk.com";
 class ServicoRequestService {
+
+
     getAll() {
-      return http.get("/servicos");
+      return http.get(`${urlBase}/servico/show`);
     }
   
     get(id) {

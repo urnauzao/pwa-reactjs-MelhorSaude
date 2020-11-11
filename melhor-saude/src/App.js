@@ -8,8 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 /** @desc Components */
 import ServicoCreate from './components/servico/servico-create.component';
-import Servico from './components/servico/servico.component';
-import ServicoList from './components/servico/servico-list.component';
+import ServicosList from './components/servico/servicos-list.component';
+import ServicoDetalhes from './components/servico/servico.component';
 
 class App extends Component {
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/servicos/novo"} className="nav-link">
+              <Link to={"/servico/novo"} className="nav-link">
                 Adicionar
               </Link>
             </li>
@@ -37,7 +37,7 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/servicos"]} component={ServicosList} />
             <Route exact path="/servico/novo" component={ServicoCreate} />
-            <Route path="/servico/:id" component={Servico} />
+            <Route path="/servico/:id" component={ServicoDetalhes} />
           </Switch>
         </div>
 
