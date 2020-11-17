@@ -9,14 +9,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 /** @desc Components */
 import ServicoCreate from './components/servico/servico-create.component';
 import ServicosList from './components/servico/servicos-list.component';
-import ServicoDetalhes from './components/servico/servico.component';
+import ServicoDetalhes from './components/servico/servico-detalhes.component';
+import ClinicasList from './components/clinica/clinicas-list.component';
+import ClinicaDetalhes from './components/clinica/clinica-detalhes.component';
+import MedicoList from './components/medico/medico-list.component';
+import MedicoDetalhes from './components/medico/medico-detalhes.component';
+import Home from './components/home/home.component';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <a href="/servicos" className="navbar-brand">
+        <nav className="navbar navbar-expand navbar-dark my-bg-primary">
+          <a href="/" className="navbar-brand">
             MELHOR SAÚDE
           </a>
           <div className="navbar-nav mr-auto">
@@ -26,8 +31,13 @@ class App extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/servico/novo"} className="nav-link">
-                Adicionar
+              <Link to={"/clinicas"} className="nav-link">
+                Clínicas
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/medicos"} className="nav-link">
+                Médicos
               </Link>
             </li>
           </div>
@@ -35,9 +45,14 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/servicos"]} component={ServicosList} />
+            <Route exact path={"/"} component={Home} />
+            <Route exact path={"/servicos"} component={ServicosList} />
             <Route exact path="/servico/novo" component={ServicoCreate} />
+            <Route exact path="/clinicas" component={ClinicasList} />
             <Route path="/servico/:id" component={ServicoDetalhes} />
+            <Route path="/clinica/:id" component={ClinicaDetalhes} />
+            <Route path={["/medicos/:id", "/medicos"]} component={MedicoList} />
+            <Route path="/medico/:id" component={MedicoDetalhes} />
           </Switch>
         </div>
 
@@ -46,28 +61,3 @@ class App extends Component {
   }
 }
 export default App;
-
-
-//DELETAR
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

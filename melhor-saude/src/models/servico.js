@@ -1,7 +1,7 @@
 class Servico{
     constructor(){
         this.id = "";
-        this.lista_clinicas = [];
+        this.clinicas = [];
         this.nome = "";
         this.url = "";    
     }
