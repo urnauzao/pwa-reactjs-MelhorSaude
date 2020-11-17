@@ -14,7 +14,7 @@ class ServicoRequestService {
     }
   
     create(data) {
-      return http.post("/servico", data);
+      return http.post("/servico/new", data);
     }
   
     //não usado

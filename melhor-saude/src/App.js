@@ -15,6 +15,7 @@ import ClinicaDetalhes from './components/clinica/clinica-detalhes.component';
 import MedicoList from './components/medico/medico-list.component';
 import MedicoDetalhes from './components/medico/medico-detalhes.component';
 import Home from './components/home/home.component';
+import ClinicaCreate from './components/clinica/clinica-create.component';
 
 class App extends Component {
   render() {
@@ -49,6 +50,7 @@ class App extends Component {
             <Route exact path={"/servicos"} component={ServicosList} />
             <Route exact path="/servico/novo" component={ServicoCreate} />
             <Route exact path="/clinicas" component={ClinicasList} />
+            <Route exact path="/clinica/novo" component={ClinicaCreate} />
             <Route path="/servico/:id" component={ServicoDetalhes} />
             <Route path="/clinica/:id" component={ClinicaDetalhes} />
             <Route path={["/medicos/:id", "/medicos"]} component={MedicoList} />

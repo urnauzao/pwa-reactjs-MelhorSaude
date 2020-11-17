@@ -8,16 +8,16 @@ class ClinicaRequestService {
     get(id) {
       return http.get(`/clinica/show/${id}`);
     }
+
+    create(data) {
+      return http.post("/clinica/new", data);
+    }
     
+    //não usadas
     createWithServico(id, data){
       return http.post(`/clinica/servico/${id}`, data);
     }
 
-    //não usadas
-    create(data) {
-      return http.post("/clinica", data);
-    }
-  
     //não usadas
     update(id, data) {
       return http.put(`/clinica/${id}`, data);
